@@ -1,0 +1,125 @@
+Metrics (CPU, latency, request count)
+Logs (application logs)
+Traces (distributed tracing between microservices)
+Native tools for logs/traces
+Datadog
+Add service latency, error rate, request flow charts.
+Production hardening (TLS, batching, load-balancing collectors)
+OTLP receivers for gRPC/HTTP,
+Applications were auto-instrumented using the Java agent, and dashboards were created in Grafana.
+k8s service discovery for apps
+============================
+Metrics (CPU, Latency, Request Count)
+
+Where are the application and node metrics configured?
+
+Which Prometheus scrape configs are used for this service?
+
+Which exporter provides CPU/memory metrics?
+
+Which Grafana dashboard panels show latency and request counts?
+
+How is latency calculated (histogram, summary, percentiles)?
+
+Are SLO/SLA alerts configured for these metrics?
+
+Logs (Application Logs)
+
+Where are logs collected from (path, container stdout, filebeat config)?
+
+Which log format do the applications use (JSON, plain text)?
+
+Which log pipeline processes them (Filebeat, Fluentd, Loki)?
+
+Where are logs stored â Loki/Elastic/Cloud provider?
+
+How do we correlate logs with traces?
+
+Traces (Distributed Tracing)
+
+Which OpenTelemetry SDK or agent is enabled?
+
+How is context propagation handled across microservices?
+
+Where are traces exported (OTLP â collector â backend)?
+
+Which dashboards show request flow between services?
+
+Native Tools for Logs/Traces
+
+Which native tools are enabled (Fluentd, CloudWatch, Stackdriver, Azure Monitor)?
+
+Whatâs the retention period for native logs?
+
+How do native traces integrate with OpenTelemetry?
+
+Datadog
+
+Which Datadog agents are installed?
+
+Which tags/labels are used for service discovery?
+
+Which dashboards show latency, error rate, throughput?
+
+How are alerts configured in Datadog?
+
+Latency, Error Rate, Request Flow Charts
+
+Where are RED (Rate-Errors-Duration) metrics configured?
+
+Which Grafana/Datadog dashboards show service dependencies?
+
+How is error rate calculated (5xx/4xx filters)?
+
+Are there multi-hop request flow traces available?
+
+Production Hardening (TLS, Batching, Load Balancing Collectors)
+
+Is TLS termination done at the app, sidecar, or collector?
+
+Are collectors horizontally scaled with load balancing?
+
+Are metrics/traces batched before export?
+
+How do we handle backpressure on collectors?
+
+OTLP Receivers (gRPC/HTTP)
+
+Which OTLP protocol is enabled (gRPC/HTTP)?
+
+Which port numbers are used for OTLP receivers?
+
+How is authentication handled for OTLP endpoints?
+
+How does the collector route data to backends?
+
+Java Auto-Instrumentation
+
+Which version of the OpenTelemetry Java agent is used?
+
+Where is the agent configured (JVM args, startup script)?
+
+Which exporters are enabled for metrics/logs/traces?
+
+Are any custom instrumentations added?
+
+Grafana Dashboards
+
+Which dashboards show trace â log â metric correlation?
+
+How are service KPIs visualized (latency/error-rate)?
+
+Who owns dashboard updates?
+
+Are alerts linked to dashboards?
+
+Kubernetes Service Discovery
+
+How does k8s service discovery pick up apps (annotations, labels)?
+
+Which namespaces are monitored?
+
+Are sidecar collectors used or DaemonSets?
+
+How do we validate that new services automatically appear in metrics/traces?
+
